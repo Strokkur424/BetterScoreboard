@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "betterscoreboard",
+  "version": "${version}",
+  "name": "BetterScoreboard",
+  "description": "Highly customisable Minecraft scoreboard mod",
+  "authors": [
+    "Strokkur24"
+  ],
+  "contact": {
+    "repo": "https://github.com/Strokkur24/BetterScoreboard"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/betterscoreboard/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.strokkur.betterscoreboard.betterscoreboard.client.MainClient"
+    ],
+    "main": [
+      "net.strokkur.betterscoreboard.betterscoreboard.Main"
+    ]
+  },
+  "mixins": [
+    "betterscoreboard.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
