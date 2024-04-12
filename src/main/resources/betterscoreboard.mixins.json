@@ -1,11 +1,12 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.strokkur.betterscoreboard.betterscoreboard.mixin",
+  "package": "net.strokkur.betterscoreboard.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
   "client": [
+    "ScoreboardMixin"
   ],
   "injectors": {
     "defaultRequire": 1

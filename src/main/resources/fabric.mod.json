@@ -15,10 +15,10 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "net.strokkur.betterscoreboard.betterscoreboard.client.MainClient"
+      "net.strokkur.betterscoreboard.client.MainClient"
     ],
     "main": [
-      "net.strokkur.betterscoreboard.betterscoreboard.Main"
+      "net.strokkur.betterscoreboard.Main"
     ]
   },
   "mixins": [

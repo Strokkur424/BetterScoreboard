@@ -1,0 +1,101 @@
+{
+  "text.config.scoreboard-config.title": "BetterScoreboard Configuration",
+
+  "text.config.scoreboard-config.option.enableScoreboard": "Scoreboard",
+  "text.config.scoreboard-config.option.textShadow": "Text Shadows",
+
+
+  "text.config.scoreboard-config.section.Score Configs": "Score Number Options",
+
+  "text.config.scoreboard-config.option.hideNumbers": "Score Numbers",
+  "text.config.scoreboard-config.option.numberColor": "Score number color",
+  "text.config.scoreboard-config.option.useHexColor": "Use hex colors",
+  "text.config.scoreboard-config.option.hexValue": "Hex color value",
+
+  "text.config.scoreboard-config.category.scoreNumberStyle": "Style",
+  "text.config.scoreboard-config.option.scoreNumberStyle.overrideStyle": "Override style",
+  "text.config.scoreboard-config.option.scoreNumberStyle.obfuscated": "§k__§r Obfuscated §k__§r",
+  "text.config.scoreboard-config.option.scoreNumberStyle.bold": "§lBold",
+  "text.config.scoreboard-config.option.scoreNumberStyle.strikethrough": "§mStrikethrough",
+  "text.config.scoreboard-config.option.scoreNumberStyle.underline": "§nUnderlined",
+  "text.config.scoreboard-config.option.scoreNumberStyle.italic": "§oItalics",
+
+  "text.config.scoreboard-config.category.scoreOverrides": "Score Overrides",
+  "text.config.scoreboard-config.option.scoreOverrides.maxEntries": "Max Entries (Lines)",
+  "text.config.scoreboard-config.option.scoreOverrides.enableOverrides": "Enable score number overriding",
+
+  "text.config.scoreboard-config.option.scoreOverrides.overrides": "Score number overrides",
+  "text.config.scoreboard-config.option.scoreOverrides.overrides.tooltip": "Format: condition-type;condition;replacement\nConditions:\n  - Placement: the line number\n  - score: The physical score on the scoreboard",
+
+
+  "text.config.scoreboard-config.section.Scoreboard Title Configs": "Title Configs",
+
+  "text.config.scoreboard-config.option.hideTitle": "Hide the Title",
+  "text.config.scoreboard-config.option.overrideTitleBackground": "Custom Title Background §8(§5WIP§8)",
+  "text.config.scoreboard-config.option.titleBackgroundOpacity": "Title background opacity",
+  "text.config.scoreboard-config.option.titleBackgroundColor": "Title background hex color",
+  "text.config.scoreboard-config.option.overrideTitleText": "Override the text in the title",
+  "text.config.scoreboard-config.option.titleText": "New title text",
+  "text.config.scoreboard-config.option.titleText.tooltip": "Supports chat colors (&) and hex colors in the format &#rrggbb",
+
+  "text.config.scoreboard-config.category.titleColor": "Title color overrides",
+  "text.config.scoreboard-config.option.titleColor.overrideColor": "Override title color",
+  "text.config.scoreboard-config.option.titleColor.overrideWithHex": "Use hex colors",
+  "text.config.scoreboard-config.option.titleColor.overrideEnum": "New title color",
+  "text.config.scoreboard-config.option.titleColor.overrideHex": "Hex color value",
+
+  "text.config.scoreboard-config.category.titleStyle": "Title style overrides",
+  "text.config.scoreboard-config.option.titleStyle.overrideStyle": "Override style",
+  "text.config.scoreboard-config.option.titleStyle.obfuscated": "§k__§r Obfuscated §k__§r",
+  "text.config.scoreboard-config.option.titleStyle.bold": "§lBold",
+  "text.config.scoreboard-config.option.titleStyle.strikethrough": "§mStrikethrough",
+  "text.config.scoreboard-config.option.titleStyle.underline": "§nUnderlined",
+  "text.config.scoreboard-config.option.titleStyle.italic": "§oItalics",
+
+
+  "text.config.scoreboard-config.section.Scoreboard Content Configs": "Content Configs",
+
+  "text.config.scoreboard-config.option.hideContent": "Hide the content box",
+  "text.config.scoreboard-config.option.overrideContentBackground": "Custom content Background §8(§5WIP§8)",
+  "text.config.scoreboard-config.option.contentBackgroundOpacity": "Content background opacity",
+  "text.config.scoreboard-config.option.contentBackgroundColor": "Content background hex color",
+
+  "text.config.scoreboard-config.category.contentColor": "Content colors overrides",
+  "text.config.scoreboard-config.category.contentColor.tooltip": "Override all content entries with a color",
+  "text.config.scoreboard-config.option.contentColor.overrideColor": "Override content colors",
+  "text.config.scoreboard-config.option.contentColor.overrideWithHex": "Use hex colors",
+  "text.config.scoreboard-config.option.contentColor.overrideEnum": "New content color",
+  "text.config.scoreboard-config.option.contentColor.overrideHex": "Hex color value",
+
+  "text.config.scoreboard-config.category.contentStyle": "Content style overrides",
+  "text.config.scoreboard-config.category.contentStyle.tooltip": "Override all content entries with a style",
+  "text.config.scoreboard-config.option.contentStyle.overrideStyle": "Override style",
+  "text.config.scoreboard-config.option.contentStyle.obfuscated": "§k__§r Obfuscated §k__§r",
+  "text.config.scoreboard-config.option.contentStyle.bold": "§lBold",
+  "text.config.scoreboard-config.option.contentStyle.strikethrough": "§mStrikethrough",
+  "text.config.scoreboard-config.option.contentStyle.underline": "§nUnderlined",
+  "text.config.scoreboard-config.option.contentStyle.italic": "§oItalics",
+
+  "text.config.scoreboard-config.category.contentOverrides": "Content overrides",
+  "text.config.scoreboard-config.option.contentOverrides.enableOverrides": "Content overrides",
+  "text.config.scoreboard-config.option.contentOverrides.overrides": "Overrides",
+  "text.config.scoreboard-config.option.contentOverrides.overrides.tooltip": "Format: condition-type;condition;replacement\nConditions:\n  - Placement: the line number\n  - Content: The physical content on the scoreboard (stripped of colors)",
+
+
+  "text.config.scoreboard-config.enum.numberColorEnum.dark_red": "§4Dark Red",
+  "text.config.scoreboard-config.enum.numberColorEnum.red": "§cRed",
+  "text.config.scoreboard-config.enum.numberColorEnum.gold": "§6Gold",
+  "text.config.scoreboard-config.enum.numberColorEnum.yellow": "§eYellow",
+  "text.config.scoreboard-config.enum.numberColorEnum.dark_green": "§2Dark Green",
+  "text.config.scoreboard-config.enum.numberColorEnum.green": "§aGreen",
+  "text.config.scoreboard-config.enum.numberColorEnum.aqua": "§bAqua",
+  "text.config.scoreboard-config.enum.numberColorEnum.dark_aqua": "§3Dark Aqua",
+  "text.config.scoreboard-config.enum.numberColorEnum.dark_blue": "§1Dark Blue",
+  "text.config.scoreboard-config.enum.numberColorEnum.blue": "§9Blue",
+  "text.config.scoreboard-config.enum.numberColorEnum.light_purple": "§dLight Purple",
+  "text.config.scoreboard-config.enum.numberColorEnum.dark_purple": "§5Dark Purple",
+  "text.config.scoreboard-config.enum.numberColorEnum.white": "§fWhite",
+  "text.config.scoreboard-config.enum.numberColorEnum.gray": "§7Gray",
+  "text.config.scoreboard-config.enum.numberColorEnum.dark_gray": "§8Dark Gray",
+  "text.config.scoreboard-config.enum.numberColorEnum.black": "§0Black"
+}
