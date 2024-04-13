@@ -12,7 +12,6 @@ import net.minecraft.scoreboard.number.NumberFormat;
 import net.minecraft.scoreboard.number.StyledNumberFormat;
 import net.minecraft.text.Text;
 import net.strokkur.betterscoreboard.records.SidebarEntry;
-//import net.strokkur.betterscoreboard.util.ConfigUtil;
 
 import net.strokkur.betterscoreboard.util.ConfigUtil;
 import org.spongepowered.asm.mixin.Final;
