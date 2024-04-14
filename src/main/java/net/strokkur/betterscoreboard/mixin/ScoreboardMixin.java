@@ -14,16 +14,14 @@ import net.minecraft.text.Text;
 import net.strokkur.betterscoreboard.records.SidebarEntry;
 
 import net.strokkur.betterscoreboard.util.ConfigUtil;
-import org.spongepowered.asm.mixin.Final;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.*;
 
 import java.util.Comparator;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@SuppressWarnings("MissingUnique")
 @Mixin(InGameHud.class)
 public abstract class ScoreboardMixin {
+    @Unique
     private static final int offset = 5;
 
     @Shadow
@@ -40,16 +38,15 @@ public abstract class ScoreboardMixin {
     @Shadow
     private MinecraftClient client;
 
-    @SuppressWarnings({"SpellCheckingInspection"})
+    @Shadow public abstract TextRenderer getTextRenderer();
+
+    @Overwrite
+    @SuppressWarnings({"SpellCheckingInspection", "deprecation"})
     private void renderScoreboardSidebar(DrawContext context, ScoreboardObjective objective) {
         if (ConfigUtil.isScoreboardDisabled()) return;
-
-        InGameHud instance = ((InGameHud) (Object) this);
-        ;
-
         Scoreboard scoreboard = objective.getScoreboard();
         NumberFormat numberFormat = objective.getNumberFormatOr(StyledNumberFormat.RED);
-
+        TextRenderer textRenderer = getTextRenderer();
         AtomicInteger index = new AtomicInteger(1);
         SidebarEntry[] sidebarEntrys;
         if (ConfigUtil.hideContent()) {
@@ -65,7 +62,7 @@ public abstract class ScoreboardMixin {
                         Text nameDecorated = ConfigUtil.overrideContentText(Team.decorateName(team, name), index.get());
 
                         Text number = ConfigUtil.overrideScoreNumber(scoreboardEntry.formatted(numberFormat), index.get());
-                        int numberWidth = instance.getTextRenderer().getWidth(number);
+                        int numberWidth = textRenderer.getWidth(number);
 
                         index.set(index.addAndGet(1));
                         if (ConfigUtil.hideScoreNumber())
@@ -80,14 +77,14 @@ public abstract class ScoreboardMixin {
         int width = 0;
 
         if (!ConfigUtil.hideTitle())
-            width = instance.getTextRenderer().getWidth(title);
+            width = textRenderer.getWidth(title);
 
         final int originalWidth = width;
-        int defaultWidth = instance.getTextRenderer().getWidth(": ");
+        int defaultWidth = textRenderer.getWidth(": ");
 
         for (SidebarEntry sidebarEntry : sidebarEntrys) {
             width = Math.max(width,
-                    instance.getTextRenderer().getWidth(sidebarEntry.name()) + (sidebarEntry.scoreWidth() > 0 ? defaultWidth + sidebarEntry.scoreWidth() : 0));
+                    textRenderer.getWidth(sidebarEntry.name()) + (sidebarEntry.scoreWidth() > 0 ? defaultWidth + sidebarEntry.scoreWidth() : 0));
         }
 
         final int requiredWidth = width;
@@ -126,16 +123,15 @@ public abstract class ScoreboardMixin {
                 }
             }
 
-            TextRenderer renderer = instance.getTextRenderer();
             int titleX = x + requiredWidth / 2 - originalWidth / 2;
 
             // Draw title text
             if (!ConfigUtil.hideTitle()) {
                 if (ConfigUtil.hideContent()) {
-                    context.drawText(renderer, title, titleX, scoresHeightPixels  - 9 + offset, -1, ConfigUtil.textShadow());
+                    context.drawText(textRenderer, title, titleX, scoresHeightPixels  - 9 + offset, -1, ConfigUtil.textShadow());
                     return;
                 }
-                context.drawText(renderer, title, titleX, scoresHeightPixels - 9, -1, ConfigUtil.textShadow());
+                context.drawText(textRenderer, title, titleX, scoresHeightPixels - 9, -1, ConfigUtil.textShadow());
             }
 
             if (ConfigUtil.hideContent()) return;
@@ -152,8 +148,8 @@ public abstract class ScoreboardMixin {
                 else {
                     y = heightPixelsScaled - xLeft * 9;
                 }
-                context.drawText(instance.getTextRenderer(), sidebarEntry.name(), x, y, -1, ConfigUtil.textShadow());
-                context.drawText(instance.getTextRenderer(), sidebarEntry.score(), xRight - sidebarEntry.scoreWidth(), y, -1, ConfigUtil.textShadow());
+                context.drawText(textRenderer, sidebarEntry.name(), x, y, -1, ConfigUtil.textShadow());
+                context.drawText(textRenderer, sidebarEntry.score(), xRight - sidebarEntry.scoreWidth(), y, -1, ConfigUtil.textShadow());
             }
 
         });
